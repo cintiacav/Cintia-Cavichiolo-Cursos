@@ -1,0 +1,387 @@
+{
+	"info": {
+		"_postman_id": "1c10806f-aae6-477b-87da-7c1be3a53c9a",
+		"name": "Spring Rest - Alura",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/topicos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n        \"titulo\": \"\",\r\n        \"mensagem\": \"Texto de mensagem 2\",\r\n        \"nomeCurso\": \"Spring Boot 2\"\r\n    \r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/topicos/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topicos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n        \"titulo\": \"Atualizado\",\r\n        \"mensagem\": \"Atualizado\"\r\n       \r\n    \r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/topicos/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topicos",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Paginacao localhost:8080/topicos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n        \"titulo\": \"\",\r\n        \"mensagem\": \"Texto de mensagem 2\",\r\n        \"nomeCurso\": \"Spring Boot 2\"\r\n    \r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/topicos?pagina=0&qtd=3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topicos"
+					],
+					"query": [
+						{
+							"key": "pagina",
+							"value": "0"
+						},
+						{
+							"key": "qtd",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Paginacao localhost:8080/topicos ordenacao",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n        \"titulo\": \"\",\r\n        \"mensagem\": \"Texto de mensagem 2\",\r\n        \"nomeCurso\": \"Spring Boot 2\"\r\n    \r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/topicos?pagina=0&qtd=3&ordenacao=titulo",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topicos"
+					],
+					"query": [
+						{
+							"key": "pagina",
+							"value": "0"
+						},
+						{
+							"key": "qtd",
+							"value": "3"
+						},
+						{
+							"key": "ordenacao",
+							"value": "titulo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Paginacao localhost:8080/topicos ordenacao pageable",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n        \"titulo\": \"\",\r\n        \"mensagem\": \"Texto de mensagem 2\",\r\n        \"nomeCurso\": \"Spring Boot 2\"\r\n    \r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/topicos?page=0&size=10&sort=titulo,ASC",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topicos"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "sort",
+							"value": "titulo,ASC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgZG8gRm9ydW0gZGEgQWx1cmEiLCJzdWIiOiIxIiwiaWF0IjoxNjE0ODc1NTU3LCJleHAiOjE2MTQ5NjE5NTd9.MSM4Sd2u5M0aUVZODpI23N7_ZbofELWQZ-TZZC1JqwU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n        \"titulo\": \"Atualizado 2\",\r\n        \"mensagem\": \"Atualizado 2\"\r\n       \r\n    \r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/topicos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topicos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "salvar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n        \"titulo\": \"Cache\",\r\n        \"mensagem\": \"Invalidando cache\",\r\n        \"nomeCurso\": \"Spring Boot\"\r\n       \r\n    \r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/topicos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topicos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n        \"email\": \"aluno@email.com\",\r\n        \"senha\": \"12456\"\r\n       \r\n    \r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Monitoracao api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/actuator",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Monitoracao api - info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/actuator/info",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Monitoracao api - health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/actuator/health",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
