@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho prático - Módulo 1</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+    <h1>Números por extenso</h1>
+    <form action="">
+      <div id="divNumeros">
+
+        <ul>
+          <li>
+              <label for="inputRange">Escolha um número entre 0 e 999.</label>             
+          <li>
+          <li>
+            <input type="range" min="0" max="999" step="1" id="inputRange" value="0"/>
+          </li>
+          <li>
+              <label for="inputNumber">Número Atual:</label>
+              <input type="text" id="inputNumber" disabled=true readonly=true/>
+          </li>
+          <li>
+            <label for="inputCursiveNumber">Número por Extenso:</label>
+            <input type="text" id="inputCursiveNumber" disabled=true readonly=true/>
+        </li>
+      </div>
+    </form>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
