@@ -92,8 +92,12 @@ accountRouter.delete('/account', async (req, res) => {
       { agencia: req.body.agencia },
       { conta: 1 }
     );
-    console.log(accounts);
-    res.send();
+
+    res
+      .status(200)
+      .send(
+        `Contas ativas para agência ${req.body.agencia} são ${accounts.length}`
+      );
   } catch (error) {
     console.log(error);
     res.status(500).send();
@@ -230,6 +234,7 @@ accountRouter.get('/highestBalance', async (req, res) => {
       {
         $sort: {
           balance: -1,
+          name: 1,
         },
       },
       {
@@ -282,11 +287,11 @@ accountRouter.get('/privateAgency', async (req, res) => {
       let accountAux = account[i];
       accountAux.agencia = 99;
       const accountSave = new accountModel(accountAux);
-      accountSave.save();
+      await accountSave.save();
     }
     const accountPrivate = await accountModel.find({ agencia: 99 }, {});
 
-    res.send(accountPrivate);
+    res.status(200).send(accountPrivate);
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
